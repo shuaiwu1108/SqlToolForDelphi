@@ -21,6 +21,7 @@ object Main: TMain
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 19
   object lblDbType: TLabel
@@ -68,8 +69,8 @@ object Main: TMain
     Layout = tlCenter
   end
   object lblVpn: TLabel
-    Left = 618
-    Top = 8
+    Left = 666
+    Top = 7
     Width = 45
     Height = 28
     ParentCustomHint = False
@@ -109,31 +110,12 @@ object Main: TMain
     ParentShowHint = False
     ShowHint = False
     TabOrder = 1
-  end
-  object cbbStation: TComboBoxEx
-    Left = 451
-    Top = 8
-    Width = 145
-    Height = 28
-    ParentCustomHint = False
-    AutoCompleteOptions = [acoAutoSuggest, acoAutoAppend]
-    ItemsEx = <>
-    BiDiMode = bdLeftToRight
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -16
-    Font.Name = 'Consolas'
-    Font.Style = []
-    ParentBiDiMode = False
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = False
-    TabOrder = 2
+    OnClick = chkAllStationClick
   end
   object edtVpn: TEdit
-    Left = 669
-    Top = 9
-    Width = 121
+    Left = 717
+    Top = 8
+    Width = 172
     Height = 27
     ParentCustomHint = False
     BiDiMode = bdLeftToRight
@@ -149,22 +131,6 @@ object Main: TMain
     ShowHint = False
     TabOrder = 3
   end
-  object cbbDbType: TComboBoxEx
-    Left = 86
-    Top = 8
-    Width = 145
-    Height = 28
-    AutoCompleteOptions = [acoAutoSuggest, acoAutoAppend]
-    ItemsEx = <
-      item
-        Caption = #21069#32622#26426
-      end
-      item
-        Caption = #31449#21153
-      end>
-    TabOrder = 0
-    Text = #21069#32622#26426
-  end
   object btnExecuteSql: TButton
     Left = 8
     Top = 43
@@ -172,6 +138,7 @@ object Main: TMain
     Height = 25
     Caption = #25191#34892'Sql'
     TabOrder = 4
+    OnClick = btnExecuteSqlClick
   end
   object btnCleanSql: TButton
     Left = 128
@@ -180,6 +147,7 @@ object Main: TMain
     Height = 25
     Caption = #28165#29702'Sql'
     TabOrder = 5
+    OnClick = btnCleanSqlClick
   end
   object redtSql: TRichEdit
     Left = 8
@@ -202,6 +170,7 @@ object Main: TMain
     Height = 25
     Caption = #28165#29702#26085#24535
     TabOrder = 7
+    OnClick = btnCleanResultLogClick
   end
   object redtResultLog: TRichEdit
     Left = 664
@@ -223,19 +192,39 @@ object Main: TMain
     Height = 25
     Caption = #28165#29702#32467#26524
     TabOrder = 9
+    OnClick = btnCleanResultClick
   end
-  object vrtlstrngtrSqlResult: TVirtualStringTree
+  object cbbStation: TComboBox
+    Left = 448
+    Top = 8
+    Width = 193
+    Height = 27
+    AutoDropDown = True
+    AutoCloseUp = True
+    TabOrder = 2
+    OnChange = cbbStationChange
+    OnSelect = cbbStationSelect
+  end
+  object cbbDbType: TComboBox
+    Left = 72
+    Top = 8
+    Width = 145
+    Height = 27
+    AutoDropDown = True
+    AutoCloseUp = True
+    TabOrder = 0
+  end
+  object redtSqlResult: TRichEdit
     Left = 8
     Top = 319
     Width = 1088
     Height = 317
-    Header.AutoSizeIndex = -1
-    Header.DefaultHeight = 17
-    Header.MainColumn = -1
-    Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
-    Header.ParentFont = True
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Consolas'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 10
-    TreeOptions.AutoOptions = [toAutoDropExpand, toAutoScroll, toAutoScrollOnExpand, toAutoTristateTracking, toAutoDeleteMovedNodes]
-    Columns = <>
   end
 end

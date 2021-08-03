@@ -2,7 +2,10 @@ program SqlToolForDelphi;
 
 uses
   Forms,
-  SqlUtil in 'SqlUtil.pas' {Main};
+  SqlUtil in 'SqlUtil.pas' {Main},
+  Models in 'Models.pas',
+  CommonUtil in 'CommonUtil.pas',
+  superobject in 'superobject.pas';
 
 {$R *.res}
 

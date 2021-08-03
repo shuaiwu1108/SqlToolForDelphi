@@ -46,6 +46,9 @@
 			<DCCReference Include="SqlUtil.pas">
 				<Form>Main</Form>
 			</DCCReference>
+			<DCCReference Include="Models.pas"/>
+			<DCCReference Include="CommonUtil.pas"/>
+			<DCCReference Include="superobject.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
